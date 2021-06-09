@@ -1,0 +1,7 @@
+.serverless/
+node_modules/
+layer/
+dist/
+minio-data/
+build
+.env

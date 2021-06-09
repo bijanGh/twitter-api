@@ -1,0 +1,27 @@
+{
+  "name": "tensorflowjs",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "cross-env NODE_PATH=. nodemon -r ./node_modules/dotenv/config --watch 'src/**/*.js' --ignore 'src/**/*.spec.js' --exec 'babel-node' index.js  dotenv_config_path=.env",
+    "lint": "eslint . --fix"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.14.3",
+    "@babel/node": "^7.14.2",
+    "@babel/preset-env": "^7.14.4",
+    "cross-env": "^7.0.3",
+    "dotenv": "^10.0.0",
+    "eslint": "^7.27.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^3.4.0",
+    "nodemon": "^2.0.7",
+    "prettier": "^2.3.0"
+  },
+  "dependencies": {
+    "@tensorflow/tfjs": "^3.7.0",
+    "fastify": "^3.17.0",
+    "fastify-cors": "^6.0.1"
+  }
+}
