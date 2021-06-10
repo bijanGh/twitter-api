@@ -1,5 +1,5 @@
 {
-  "name": "tensorflowjs",
+  "name": "twitter-api",
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
@@ -20,7 +20,7 @@
     "prettier": "^2.3.0"
   },
   "dependencies": {
-    "@tensorflow/tfjs": "^3.7.0",
+    "axios": "^0.21.1",
     "fastify": "^3.17.0",
     "fastify-cors": "^6.0.1"
   }
