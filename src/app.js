@@ -69,7 +69,6 @@ fastify.all("/health-check", (req, reply) => {
 export default async () => {
   try {
     await fastify.listen(process.env.PORT);
-    console.log("app is listening on http://localhost:", process.env.PORT);
   } catch (err) {
     fastify.log.error(err);
     process.exit(1);
