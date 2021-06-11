@@ -8,8 +8,14 @@ RUN yarn --frozen-lockfile
 
 COPY . .
 
+RUN yarn build
+
+FROM node:14.16.1-alpine
+
+COPY --from=BUILD_IMAGE /usr/src/app/dist ./
+COPY --from=BUILD_IMAGE /usr/src/app/package.json ./
+COPY --from=BUILD_IMAGE /usr/src/app/node_modules ./node_modules
+
 EXPOSE 4000
 
-CMD ["node" ,"index.js"]
-
-
+CMD ["node","index.js"]
