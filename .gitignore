@@ -5,3 +5,4 @@ dist/
 minio-data/
 build
 .env
+.cache
