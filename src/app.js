@@ -68,8 +68,9 @@ fastify.all("/health-check", (req, reply) => {
 
 export default async () => {
   try {
-    await fastify.listen(process.env.PORT);
+    await fastify.listen(process.env.PORT || 4000);
   } catch (err) {
+    console.log("🚀 ~ file: app.js ~ line 73 ~ err", err);
     fastify.log.error(err);
     process.exit(1);
   }
