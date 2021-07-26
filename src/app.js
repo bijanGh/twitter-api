@@ -3,7 +3,7 @@ const fastify = require("fastify")({});
 import axios from "axios";
 
 fastify.register(require("fastify-cors"), {
-  origin: process.env.NODE_ENV === "production" ? false : true,
+  origin: true,
 });
 
 fastify.post("/getUser", async (req, reply) => {
