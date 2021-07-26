@@ -43,7 +43,7 @@ fastify.post("/tweets", async (req, reply) => {
   const {
     data: { data: userTweets },
   } = await axios.get(
-    `https://api.twitter.com/2/users/${userData.id}/tweets?tweet.fields=id,text,created_at,conversation_id&max_results=10 `,
+    `https://api.twitter.com/2/users/${userData.id}/tweets?tweet.fields=id,text,created_at,conversation_id&max_results=100 `,
     {
       headers: {
         Authorization: `Bearer ${process.env.TWITTER_BEARER_TOKEN}`,
