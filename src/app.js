@@ -43,7 +43,11 @@ fastify.post("/tweets", async (req, reply) => {
   const {
     data: { data: userTweets },
   } = await axios.get(
-    `https://api.twitter.com/2/users/${userData.id}/tweets?tweet.fields=id,text,created_at,conversation_id&max_results=100 `,
+    `https://api.twitter.com/2/users/${
+      userData.id
+    }/tweets?tweet.fields=id,text,created_at,conversation_id&max_results=${
+      process.env.MAX_RESULT_COUNT ?? 20
+    }`,
     {
       headers: {
         Authorization: `Bearer ${process.env.TWITTER_BEARER_TOKEN}`,
@@ -73,7 +77,11 @@ fastify.post("/mentions", async (req, reply) => {
   const {
     data: { data: mentionedTweets },
   } = await axios.get(
-    `https://api.twitter.com/2/users/${userData.id}/mentions?tweet.fields=id,author_id,text,created_at&user.fields=id,name,profile_image_url&max_results=100 `,
+    `https://api.twitter.com/2/users/${
+      userData.id
+    }/mentions?tweet.fields=id,author_id,text,created_at&user.fields=id,name,profile_image_url&max_results=${
+      process.env.MAX_RESULT_COUNT ?? 20
+    }`,
     {
       headers: {
         Authorization: `Bearer ${process.env.TWITTER_BEARER_TOKEN}`,
