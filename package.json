@@ -4,21 +4,15 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "dev": "cross-env NODE_PATH=. nodemon -r ./node_modules/dotenv/config --watch 'src/**/*.js' --ignore 'src/**/*.spec.js' --exec 'babel-node' index.js  dotenv_config_path=.env",
-    "build": "parcel build index.js --target node ",
-    "serve": "cross-env NODE_PATH=. node -r ./node_modules/dotenv/config ./dist/index.js",
+    "dev": " nodemon -r ./node_modules/dotenv/config --watch index.js",
+    "start": "node node ",
     "lint": "eslint . --fix"
   },
   "devDependencies": {
-    "@babel/core": "^7.14.3",
-    "@babel/node": "^7.14.2",
-    "@babel/preset-env": "^7.14.4",
-    "cross-env": "^7.0.3",
     "dotenv": "^10.0.0",
     "eslint": "^7.27.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^3.4.0",
-    "parcel-bundler": "^1.12.5",
     "nodemon": "^2.0.7",
     "prettier": "^2.3.0"
   },
